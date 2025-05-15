@@ -6,7 +6,7 @@ import Projects from "./Sections/Projects";
 import Testimonial from "./Sections/Testimonial";
 import Contact from "./Sections/contact";
 import Footer from "./Sections/footer";
-import Experience from "./Sections/EXperience";
+import Experience from "./Sections/Experience";
 
 function App() {
   return (
