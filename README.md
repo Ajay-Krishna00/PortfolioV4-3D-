@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website! Built to showcase my skills, projects, and personality, this portfolio isn’t just a static page — it's an **interactive, animated experience** crafted with modern web technologies, including **Three.js**, **React**, and **Tailwind CSS**.
 
 ## 🚀 Live Demo
-👉 [Visit the Live Site](https://your-portfolio-link.com)
+👉 [Visit the Live Site](https://ajaykrishna3d-portfolio.vercel.app/)
 
 ## 🧠 About the Project
 
