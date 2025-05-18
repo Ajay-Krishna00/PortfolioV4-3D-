@@ -8,7 +8,7 @@ import Developer from "../Components/Developer";
 const Experience = () => {
   const [animation, setAnimation] = React.useState("idle");
   return (
-    <section className="c-space my-10" id="work">
+    <section className="sm:px-20 px-5 my-10" id="work">
       <div className="w-full text-white-600 ">
         <h3 className="head-text">Experience</h3>
         <div className="work-container">

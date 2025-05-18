@@ -1,11 +1,14 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useMediaQuery } from "react-responsive";
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -37,7 +40,7 @@ const Contact = () => {
     }
   };
   return (
-    <section className="sm:px-40 px-10 my-10" id="contact">
+    <section className="sm:px-20 px-5 my-10" id="contact">
       {message && (
         <div
           className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50  "
@@ -62,7 +65,7 @@ const Contact = () => {
         /> */}
         <div className="flex flex-col gap-5">
           <div className="contact-container border-black-300 border-2 rounded-lg p-10 bg-white-100">
-            <h3 className="head-text font-generalsans mb-2">Let's Talk</h3>
+            <h3 className="head-text font-generalsans mb-4">Let's Talk</h3>
             <p className="text-lg text-white-600 font-generalsans">
               Whether you're looking to build something from scratch, refine
               what you already have, or just chat about an exciting idea — I'm
@@ -123,46 +126,48 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="flex flex-col items-center justify-center  border-black-300 border-2 rounded-lg p-10 bg-white-100">
-            <p className="font-generalsans sm:text-3xl text-xl font-semibold text-gray_gradient">
-              Or Reach out to me on
-            </p>
-            <div className="flex space-x-4 mt-4">
-              <a
-                href="https://github.com/Ajay-Krishna00"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/github.svg"
-                  alt="LinkedIn"
-                  className="w-8 h-8"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ajay-krishna-d"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/linkedin.png"
-                  alt="LinkedIn"
-                  className="w-8 h-8 bg-white"
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/ajay_k.d_?igsh=czY3NHVodWd4ZHEx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/instagram.svg"
-                  alt="LinkedIn"
-                  className="w-8 h-8"
-                />
-              </a>
+          {isMobile && (
+            <div className="flex flex-col items-center justify-center  border-black-300 border-2 rounded-lg p-10 bg-white-100">
+              <p className="font-generalsans sm:text-3xl text-xl font-semibold text-gray_gradient">
+                Or Reach out to me on
+              </p>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/Ajay-Krishna00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/github.svg"
+                    alt="LinkedIn"
+                    className="w-8 h-8"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ajay-krishna-d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/linkedin.png"
+                    alt="LinkedIn"
+                    className="w-8 h-8 bg-white"
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/ajay_k.d_?igsh=czY3NHVodWd4ZHEx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/instagram.svg"
+                    alt="LinkedIn"
+                    className="w-8 h-8"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

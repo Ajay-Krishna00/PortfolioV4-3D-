@@ -7,6 +7,9 @@ import Testimonial from "./Sections/Testimonial";
 import Contact from "./Sections/contact";
 import Footer from "./Sections/footer";
 import Experience from "./Sections/Experience";
+import TechStack from "./Sections/TechStack";
+import SocialLinks from "./Components/SocialLinks";
+import Cursor from "./Components/Cursor";
 
 function App() {
   return (
@@ -14,11 +17,14 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <TechStack />
       <Projects />
       <Testimonial />
       <Experience />
       <Contact />
       <Footer />
+      <SocialLinks />
+      {/* <Cursor/> */}
     </main>
   );
 }

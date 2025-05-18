@@ -12,9 +12,11 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
+    "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
     "@react-three/postprocessing": "^3.0.4",
+    "@react-three/rapier": "^2.1.0",
     "gsap": "^3.13.0",
     "leva": "^0.10.0",
     "maath": "^0.10.8",

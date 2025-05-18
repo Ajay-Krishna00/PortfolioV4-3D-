@@ -318,3 +318,47 @@ export const workExperiences = [
     animation: "salute",
   },
 ];
+
+export const techKnowledge = [
+  {
+    category: "Frontend Tools & Frameworks",
+    items: [
+      "React.js",
+      "Next.js",
+      "Vite",
+      "Tailwind CSS",
+      "Material UI",
+      "Chakra UI",
+    ],
+  },
+  {
+    category: "Backend & Databases",
+    items: ["Node.js", "Express.js", "PostgreSQL", "SupaBase", "Firebase"],
+  },
+  {
+    category: "Languages & Core Technologies",
+    items: [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "SQL",
+      "HTML5",
+      "CSS3",
+    ],
+  },
+  {
+    category: "Other Tools & Libraries",
+    items: ["Three.js", "React Three Fiber", "Drei", "GSAP", "Git"],
+  },
+];
+
+export const heroText = [
+  { text: "Ideas", img: "/assets/ideas.svg" },
+  { text: "Code", img: "/assets/code.svg" },
+  { text: "Solutions", img: "/assets/concepts.svg" },
+  { text: "Designs", img: "/assets/designs.svg" },
+  { text: "Dreams", img: "/assets/concepts.svg" },
+];

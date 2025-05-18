@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="bg-black-100 flex flex-col items-center justify-center pb-5">
       <p className="text-lg text-white-600 font-generalsans mt-4">
-        © {currentYear} Ajay KrishnaD . All rights reserved.
+        © {currentYear} Ajay Krishna D . All rights reserved.
       </p>
     </div>
   );

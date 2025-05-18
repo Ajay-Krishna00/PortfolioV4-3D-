@@ -31,7 +31,7 @@ body {
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-white transition-colors;
+    @apply text-lg md:text-base hover:text-white transition-all;
   }
 
   .nav-sidebar {
@@ -212,5 +212,192 @@ body {
   100% {
     transform: scale(2);
     opacity: 0;
+  }
+}
+
+.wrapper {
+  animation: Slider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
+}
+
+@keyframes Slider {
+  0% {
+    transform: translateY(0.4%);
+  }
+
+  12.5% {
+    transform: translateY(-12.4%);
+  }
+
+  25% {
+    transform: translateY(-24%);
+  }
+
+  37.5% {
+    transform: translateY(-37.4%);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  62.5% {
+    transform: translateY(-62.4%);
+  }
+
+  75% {
+    transform: translateY(-75%);
+  }
+
+  87.5% {
+    transform: translateY(-87.4%);
+  }
+}
+
+.cardHoverer:hover {
+  animation: cardHoverer 1.5s infinite ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+@keyframes cardHoverer {
+  0% {
+    border: 2;
+    border-top-color: blue;
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(0, 174, 255);
+    border-right-color: rgb(0, 208, 255);
+  }
+
+  35% {
+    border-right-color: blue;
+    border-top-color: rgb(102, 102, 245);
+    border-left-color: rgb(0, 174, 255);
+    border-bottom-color: rgb(0, 208, 255);
+  }
+
+  70% {
+    border-bottom-color: blue;
+    border-right-color: rgb(102, 102, 245);
+    border-top-color: rgb(0, 174, 255);
+    border-left-color: rgb(0, 208, 255);
+  }
+  100% {
+    border: 2;
+    border-top-color: blue;
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(0, 174, 255);
+    border-right-color: rgb(0, 208, 255);
+  }
+}
+
+@layer components {
+  .toolCard {
+    @apply px-5 py-2 rounded-lg bg-black-200 border border-black-300 cursor-default;
+  }
+}
+/* tool card animation */
+.toolCard:hover {
+  animation: toolCard 1.5s infinite ease-in-out;
+  background-color: rgb(18, 18, 18);
+}
+@keyframes toolCard {
+  0% {
+    border-top-color: rgb(47, 47, 253);
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(248, 82, 187);
+    border-right-color: rgb(250, 59, 116);
+  }
+
+  35% {
+    border-right-color: rgb(47, 47, 253);
+    border-top-color: rgb(102, 102, 245);
+    border-left-color: rgb(248, 82, 187);
+    border-bottom-color: rgb(250, 59, 116);
+  }
+
+  70% {
+    border-bottom-color: rgb(47, 47, 253);
+    border-right-color: rgb(102, 102, 245);
+    border-top-color: rgb(248, 82, 187);
+    border-left-color: rgb(250, 59, 116);
+  }
+  100% {
+    border: 2;
+    border-top-color: rgb(47, 47, 253);
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(248, 82, 187);
+    border-right-color: rgb(250, 59, 116);
+  }
+}
+.toolCard {
+  animation: toolCardW 1.5s infinite ease-in-out;
+}
+@keyframes toolCardW {
+  0% {
+    border-top-color: rgb(174, 174, 174);
+    border-left-color: rgb(141, 141, 142);
+    border-bottom-color: rgb(106, 106, 106);
+    border-right-color: rgb(247, 247, 247);
+  }
+
+  35% {
+    border-right-color: rgb(174, 174, 174);
+    border-top-color: rgb(141, 141, 142);
+    border-left-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(237, 236, 236);
+  }
+
+  70% {
+    border-bottom-color: rgb(174, 174, 174);
+    border-right-color: rgb(141, 141, 142);
+    border-top-color: rgb(106, 106, 106);
+    border-left-color: rgb(244, 244, 244);
+  }
+  100% {
+    border: 2;
+    border-top-color: rgb(174, 174, 174);
+    border-left-color: rgb(141, 141, 142);
+    border-bottom-color: rgb(106, 106, 106);
+    border-right-color: rgb(236, 236, 236);
+  }
+}
+.cursor-main {
+  --size: 0px;
+  position: fixed;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50px;
+  pointer-events: none;
+  z-index: 99;
+  background-color: #e6c3ff;
+  box-shadow: 0px 0px 30px 0px rgb(175, 131, 255);
+  mix-blend-mode: difference;
+  transition:
+    top 0.3s ease-out,
+    left 0.3s ease-out,
+    width 0.3s ease-out,
+    height 0.3s ease-out;
+}
+
+.cursor-icons {
+  top: 10px;
+  left: 10px;
+  height: calc(var(--cursorH) - 20px);
+  transition:
+    all 0.5s ease-out,
+    height 0.5s ease-in-out;
+}
+
+.cursor-disable {
+  --size: 0px;
+}
+
+@media only screen and (min-width: 600px) {
+  .cursor-main {
+    --size: 50px;
+  }
+
+  .cursor-disable {
+    --size: 0px;
   }
 }

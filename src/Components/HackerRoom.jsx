@@ -1,4 +1,7 @@
+import { useGSAP } from "@gsap/react";
 import { useGLTF, useTexture } from "@react-three/drei";
+import gsap from "gsap";
+import { useRef } from "react";
 
 const HackerRoom = (props) => {
   const { nodes, materials } = useGLTF("/models/hacker-room.glb");
@@ -6,8 +9,20 @@ const HackerRoom = (props) => {
   const monitortxt = useTexture("textures/desk/monitor.png");
   const screenTxt = useTexture("textures/desk/screen.png");
 
+  const meshRef = useRef();
+
+  useGSAP(() => {
+    gsap.to(meshRef.current.rotation, {
+      x: 0.3,
+      y: 3.1,
+      z: 0,
+      duration: 2,
+      ease: "power2.inOut",
+    });
+  });
+
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={meshRef}>
       <mesh
         geometry={nodes.screen_screens_0.geometry}
         material={materials.screens}

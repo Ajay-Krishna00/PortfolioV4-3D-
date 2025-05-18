@@ -21,7 +21,7 @@ const Projects = () => {
     });
   };
   return (
-    <section className="c-space my-20" id="projects">
+    <section className="sm:px-20 px-5 my-20" id="projects">
       <p className="head-text">Projects</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
@@ -71,7 +71,20 @@ const Projects = () => {
               />
             </a>
           </div>
-          <div className="flex justify-between item-center mt-7">
+          <div className="flex items-center justify-center flex-wrap gap-5">
+            {myProjects.map((_, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`w-2.5 h-2.5 rounded-full cursor-pointer ${index === selectedProject ? "bg-white" : "bg-gray-700"}`}
+                  onClick={() => {
+                    setSelectedProject(index);
+                  }}
+                ></div>
+              );
+            })}
+          </div>
+          <div className="flex justify-between item-center mt-3">
             <button
               className="arrow-btn"
               onClick={() => {
