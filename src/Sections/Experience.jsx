@@ -16,12 +16,14 @@ const Experience = () => {
             <Canvas>
               <ambientLight intensity={2} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-              <directionalLight position={[-10, -10, -10]} intensity={1} />
+              <directionalLight position={[10, 10, 10]} intensity={1} />
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
               {/* autoRotate can be a parameter of OrbitControls */}
-              <Suspense fallback={<CanvasLoader />}>
+              <Suspense>
                 <Developer
                   position-y={-3}
+                  rotation-y={Math.PI / 15}
+                  rotation-x={Math.PI / 12}
                   scale={3}
                   animationName={animation}
                 />

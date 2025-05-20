@@ -259,32 +259,32 @@ body {
 }
 @keyframes cardHoverer {
   0% {
-    border: 2;
-    border-top-color: blue;
-    border-left-color: rgb(102, 102, 245);
-    border-bottom-color: rgb(0, 174, 255);
-    border-right-color: rgb(0, 208, 255);
+    border-top-color: rgb(174, 174, 174);
+    border-left-color: rgb(141, 141, 142);
+    border-bottom-color: rgb(106, 106, 106);
+    border-right-color: rgb(247, 247, 247);
   }
 
   35% {
-    border-right-color: blue;
-    border-top-color: rgb(102, 102, 245);
-    border-left-color: rgb(0, 174, 255);
-    border-bottom-color: rgb(0, 208, 255);
+    border-right-color: rgb(174, 174, 174);
+    border-top-color: rgb(141, 141, 142);
+    border-left-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(255, 255, 255);
   }
 
   70% {
-    border-bottom-color: blue;
-    border-right-color: rgb(102, 102, 245);
-    border-top-color: rgb(0, 174, 255);
-    border-left-color: rgb(0, 208, 255);
+    border-bottom-color: rgb(174, 174, 174);
+    border-right-color: rgb(141, 141, 142);
+    border-top-color: rgb(106, 106, 106);
+    border-left-color: rgb(255, 255, 255);
   }
+
   100% {
     border: 2;
-    border-top-color: blue;
-    border-left-color: rgb(102, 102, 245);
-    border-bottom-color: rgb(0, 174, 255);
-    border-right-color: rgb(0, 208, 255);
+    border-top-color: rgb(174, 174, 174);
+    border-left-color: rgb(141, 141, 142);
+    border-bottom-color: rgb(106, 106, 106);
+    border-right-color: rgb(236, 236, 236);
   }
 }
 
@@ -359,6 +359,27 @@ body {
     border-right-color: rgb(236, 236, 236);
   }
 }
+.Loading {
+  animation: Loading 1s infinite ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes Loading {
+  0% {
+    border-top-color: rgb(47, 47, 253);
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(248, 82, 187);
+    border-right-color: rgb(250, 59, 116);
+  }
+
+  100% {
+    border: 2;
+    border-top-color: rgb(47, 47, 253);
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(248, 82, 187);
+    border-right-color: rgb(250, 59, 116);
+  }
+}
 .cursor-main {
   --size: 0px;
   position: fixed;
@@ -399,5 +420,58 @@ body {
 
   .cursor-disable {
     --size: 0px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-in-out backwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 1s ease-in-out forward;
+}
+
+.Loading-bg {
+  animation: fade 0.8s ease-in forwards;
+}
+@keyframes fade {
+  from {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 6rem;
+    border: 4px solid #8b5cf6;
+    border-radius: 9999px;
+  }
+
+  to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #010103;
+    border-radius: 0px;
   }
 }

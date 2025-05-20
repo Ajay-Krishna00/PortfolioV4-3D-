@@ -10,7 +10,7 @@ import Button from "../Components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const Hero = () => {
+const Hero = ({ setIsLoaded }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
@@ -30,7 +30,7 @@ const Hero = () => {
     tl.fromTo(
       ".hero_tag",
       { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1.5 },
+      { opacity: 1, y: 0, duration: 1 },
     );
   });
 
@@ -61,6 +61,7 @@ const Hero = () => {
                 scale={isMobile ? 0.06 : isTablet ? 0.07 : 0.1}
                 position={[0.5, -7.2, 3.8]}
                 rotation={[0.7, 3.1, 0.0]}
+                onLoaded={() => setIsLoaded(true)}
               />
               <Target />
             </HeroCamera>

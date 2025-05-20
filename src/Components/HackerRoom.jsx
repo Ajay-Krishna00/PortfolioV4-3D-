@@ -1,10 +1,19 @@
 import { useGSAP } from "@gsap/react";
-import { useGLTF, useTexture } from "@react-three/drei";
+import { useGLTF, useProgress, useTexture } from "@react-three/drei";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-const HackerRoom = (props) => {
+const HackerRoom = ({ onLoaded, ...props }) => {
   const { nodes, materials } = useGLTF("/models/hacker-room.glb");
+  const { scene } = useGLTF("/models/hacker-room.glb");
+
+  const { loaded, total, active } = useProgress();
+
+  useEffect(() => {
+    if (loaded === total && total > 0 && !active) {
+      onLoaded?.();
+    }
+  }, [loaded, total, active]);
 
   const monitortxt = useTexture("textures/desk/monitor.png");
   const screenTxt = useTexture("textures/desk/screen.png");

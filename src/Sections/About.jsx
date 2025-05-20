@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Globe from "react-globe.gl";
 import Button from "../Components/Button";
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+
+  const globe = useRef();
+
+  useEffect(() => {
+    if (globe.current) {
+      globe.current.controls().autoRotate = true;
+      globe.current.controls().autoRotateSpeed = 3;
+    }
+  });
 
   const handleCopy = () => {
     navigator.clipboard.writeText("ajaykrishna2405@gmail.com");
@@ -59,6 +68,7 @@ const About = () => {
           <div className="grid-container cardHoverer">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
               <Globe
+                ref={globe}
                 height={326}
                 width={326}
                 backgroundColor="rgba(0, 0, 0, 0)"

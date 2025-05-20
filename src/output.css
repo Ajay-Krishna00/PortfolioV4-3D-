@@ -795,6 +795,10 @@ video {
   width: 1.5rem;
 }
 
+.w-72{
+  width: 18rem;
+}
+
 .w-8{
   width: 2rem;
 }
@@ -953,9 +957,18 @@ video {
   border-width: 2px;
 }
 
+.border-\[4px\]{
+  border-width: 4px;
+}
+
 .border-black-300{
   --tw-border-opacity: 1;
   border-color: rgb(28 28 33 / var(--tw-border-opacity, 1));
+}
+
+.border-violet-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(139 92 246 / var(--tw-border-opacity, 1));
 }
 
 .bg-black{
@@ -1029,6 +1042,10 @@ video {
   padding: 2.5rem;
 }
 
+.p-2{
+  padding: 0.5rem;
+}
+
 .p-3{
   padding: 0.75rem;
 }
@@ -1055,6 +1072,11 @@ video {
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .py-10{
@@ -1803,33 +1825,32 @@ body {
 
 @keyframes cardHoverer {
   0% {
-    border: 2;
-    border-top-color: blue;
-    border-left-color: rgb(102, 102, 245);
-    border-bottom-color: rgb(0, 174, 255);
-    border-right-color: rgb(0, 208, 255);
+    border-top-color: rgb(174, 174, 174);
+    border-left-color: rgb(141, 141, 142);
+    border-bottom-color: rgb(106, 106, 106);
+    border-right-color: rgb(247, 247, 247);
   }
 
   35% {
-    border-right-color: blue;
-    border-top-color: rgb(102, 102, 245);
-    border-left-color: rgb(0, 174, 255);
-    border-bottom-color: rgb(0, 208, 255);
+    border-right-color: rgb(174, 174, 174);
+    border-top-color: rgb(141, 141, 142);
+    border-left-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(255, 255, 255);
   }
 
   70% {
-    border-bottom-color: blue;
-    border-right-color: rgb(102, 102, 245);
-    border-top-color: rgb(0, 174, 255);
-    border-left-color: rgb(0, 208, 255);
+    border-bottom-color: rgb(174, 174, 174);
+    border-right-color: rgb(141, 141, 142);
+    border-top-color: rgb(106, 106, 106);
+    border-left-color: rgb(255, 255, 255);
   }
 
   100% {
     border: 2;
-    border-top-color: blue;
-    border-left-color: rgb(102, 102, 245);
-    border-bottom-color: rgb(0, 174, 255);
-    border-right-color: rgb(0, 208, 255);
+    border-top-color: rgb(174, 174, 174);
+    border-left-color: rgb(141, 141, 142);
+    border-bottom-color: rgb(106, 106, 106);
+    border-right-color: rgb(236, 236, 236);
   }
 }
 
@@ -1906,6 +1927,28 @@ body {
   }
 }
 
+.Loading {
+  animation: Loading 1s infinite ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes Loading {
+  0% {
+    border-top-color: rgb(47, 47, 253);
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(248, 82, 187);
+    border-right-color: rgb(250, 59, 116);
+  }
+
+  100% {
+    border: 2;
+    border-top-color: rgb(47, 47, 253);
+    border-left-color: rgb(102, 102, 245);
+    border-bottom-color: rgb(248, 82, 187);
+    border-right-color: rgb(250, 59, 116);
+  }
+}
+
 .cursor-main {
   --size: 0px;
   position: fixed;
@@ -1949,6 +1992,60 @@ body {
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-in-out backwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 1s ease-in-out forward;
+}
+
+.Loading-bg {
+  animation: fade 0.8s ease-in forwards;
+}
+
+@keyframes fade {
+  from {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 6rem;
+    border: 4px solid #8b5cf6;
+    border-radius: 9999px;
+  }
+
+  to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #010103;
+    border-radius: 0px;
+  }
+}
+
 .hover\:h-10:hover{
   height: 2.5rem;
 }
@@ -1969,9 +2066,18 @@ body {
   border-radius: 0.75rem;
 }
 
-.hover\:bg-violet-500:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity, 1));
+.hover\:bg-gradient-to-br:hover{
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.hover\:from-violet-500:hover{
+  --tw-gradient-from: #8b5cf6 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(139 92 246 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.hover\:to-blue-500:hover{
+  --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position);
 }
 
 .hover\:text-white:hover{
