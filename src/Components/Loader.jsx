@@ -14,10 +14,12 @@ const CusLoader = ({ onFinish }) => {
         const loadingContainer = document.querySelector(".Loading-container");
         loadingContainer.classList.add("Loading-bg");
         loadingContainer.classList.remove("Loading");
-      }, 1500);
+        const welcomeText = document.querySelector(".welcome");
+        welcomeText.classList.add("Netflix");
+      }, 1800);
       const timer = setTimeout(() => {
         onFinish();
-      }, 2500);
+      }, 3500);
       return () => {
         clearTimeout(timer);
         clearTimeout(timer1);
@@ -34,7 +36,7 @@ const CusLoader = ({ onFinish }) => {
         {isLoading ? (
           <p className="Lodd">Loading... {progress.toFixed(0)}%</p>
         ) : (
-          <p className="animate-fade-in">Welcome</p>
+          <p className="animate-fade-in welcome">Welcome</p>
         )}
       </div>
     </div>

@@ -570,6 +570,10 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.visible{
+  visibility: visible;
+}
+
 .fixed{
   position: fixed;
 }
@@ -754,6 +758,10 @@ video {
   height: 24rem;
 }
 
+.h-\[50px\]{
+  height: 50px;
+}
+
 .h-fit{
   height: -moz-fit-content;
   height: fit-content;
@@ -807,6 +815,10 @@ video {
   width: 2.25rem;
 }
 
+.w-\[50px\]{
+  width: 50px;
+}
+
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -818,6 +830,10 @@ video {
 
 .max-w-7xl{
   max-width: 80rem;
+}
+
+.grow{
+  flex-grow: 1;
 }
 
 .transform{
@@ -1104,6 +1120,10 @@ video {
 
 .font-generalsans{
   font-family: General Sans, sans-serif;
+}
+
+.font-serif{
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .text-2xl{
@@ -1857,8 +1877,8 @@ body {
 /* tool card animation */
 
 .toolCard:hover {
-  animation: toolCard 1.5s infinite ease-in-out;
-  background-color: rgb(18, 18, 18);
+  animation: toolCard 0.5s infinite ease-in-out;
+  border: 3px solid;
 }
 
 @keyframes toolCard {
@@ -2025,7 +2045,7 @@ body {
 }
 
 @keyframes fade {
-  from {
+  0% {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2035,7 +2055,7 @@ body {
     border-radius: 9999px;
   }
 
-  to {
+  60% {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2043,6 +2063,32 @@ body {
     height: 100%;
     border: 4px solid #010103;
     border-radius: 0px;
+  }
+
+  100% {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #010103;
+    border-radius: 0px;
+  }
+}
+
+.Netflix{
+  animation: zoomOutFade 1.5s ease-in-out forwards;
+}
+
+@keyframes zoomOutFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(40);
+    opacity: 0;
   }
 }
 
@@ -2066,6 +2112,11 @@ body {
   border-radius: 0.75rem;
 }
 
+.hover\:bg-gray-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-gradient-to-br:hover{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -2078,6 +2129,15 @@ body {
 
 .hover\:to-blue-500:hover{
   --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position);
+}
+
+.hover\:font-semibold:hover{
+  font-weight: 600;
+}
+
+.hover\:text-black:hover{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-white:hover{

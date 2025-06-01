@@ -27,7 +27,7 @@ function App() {
           <About />
           <TechStack />
           <Projects />
-          <Testimonial />
+          {/* <Testimonial /> */}
           <Experience />
           <Contact />
           <Footer />

@@ -295,8 +295,8 @@ body {
 }
 /* tool card animation */
 .toolCard:hover {
-  animation: toolCard 1.5s infinite ease-in-out;
-  background-color: rgb(18, 18, 18);
+  animation: toolCard 0.5s infinite ease-in-out;
+  border: 3px solid;
 }
 @keyframes toolCard {
   0% {
@@ -455,7 +455,7 @@ body {
   animation: fade 0.8s ease-in forwards;
 }
 @keyframes fade {
-  from {
+  0% {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -465,7 +465,7 @@ body {
     border-radius: 9999px;
   }
 
-  to {
+  60% {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -473,5 +473,29 @@ body {
     height: 100%;
     border: 4px solid #010103;
     border-radius: 0px;
+  }
+  100% {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #010103;
+    border-radius: 0px;
+  }
+}
+
+.Netflix{
+  animation: zoomOutFade 1.5s ease-in-out forwards;
+}
+@keyframes zoomOutFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(40);
+    opacity: 0;
   }
 }

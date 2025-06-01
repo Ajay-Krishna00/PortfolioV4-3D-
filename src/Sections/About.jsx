@@ -1,6 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Globe from "react-globe.gl";
 import Button from "../Components/Button";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -25,8 +35,13 @@ const About = () => {
   return (
     <section className="sm:px-20 px-5 my-20" id="about">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-6 gap-5 h-full">
-        <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container cardHoverer">
+        <div className="col-span-1 xl:row-span-3"
+        >
+          <motion.div className="grid-container cardHoverer" variants={cardVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}>
             <img
               src="/assets/grid1.png"
               alt="grid-1"
@@ -35,16 +50,20 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I'm Ajay Krishna D</p>
               <p className="grid-subtext">
-                I'm a Full-stack developer and CSE undergrad passionate about
+                I'm a <b className="text-white ">Full-stack developer</b> and CSE undergrad passionate about
                 crafting clean, efficient, and user-focused web experiences.
                 <br /> I love building things that solve problems — from idea to
                 deployment!
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container cardHoverer">
+          <motion.div className="grid-container cardHoverer" variants={cardVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}>
             <img
               src="/assets/grid2.png"
               alt="grid-2"
@@ -62,10 +81,14 @@ const About = () => {
                 work.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="col-span-1 xl:row-span-4">
-          <div className="grid-container cardHoverer">
+          <motion.div className="grid-container cardHoverer" variants={cardVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}>
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
               <Globe
                 ref={globe}
@@ -100,10 +123,14 @@ const About = () => {
                 />
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container cardHoverer">
+          <motion.div className="grid-container cardHoverer" variants={cardVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}>
             <img
               src="/assets/grid3.png"
               alt="grid3"
@@ -121,10 +148,14 @@ const About = () => {
                 just clever — but maintainable and meaningful.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container cardHoverer">
+          <motion.div className="grid-container cardHoverer" variants={cardVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}>
             <img
               src="/assets/grid4.png"
               alt="grid4"
@@ -142,7 +173,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

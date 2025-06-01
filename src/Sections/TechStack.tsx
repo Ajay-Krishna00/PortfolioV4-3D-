@@ -8,11 +8,11 @@ const TechStack = () => {
       <div className="flex sm:flex-row flex-col w-full">
         <div className="flex flex-col justify-between w-full text-white sm:p-10 p-5">
           {techKnowledge.map((data, index) => (
-            <div className="mb-4" key={index}>
+            <div className="mb-4 " key={index}>
               <h2 className="text-xl font-semibold ">{data.category}</h2>
-              <div className="flex flex-wrap gap-3 mt-2">
+              <div className="flex flex-wrap gap-3 mt-2 ">
                 {data.items.map((tech, id) => (
-                  <div className="inline toolCard" key={id}>
+                  <div className="inline toolCard hover:bg-gray-100 hover:text-black hover:font-semibold transition-all" key={id}>
                     {tech}
                   </div>
                 ))}

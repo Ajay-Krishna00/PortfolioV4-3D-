@@ -49,7 +49,7 @@ const Experience = () => {
                   >
                     <div className="flex flex-col h-full justify-start items-center py-2">
                       <div className="work-content_logo">
-                        <img src={icon} alt="icon" className="w-full h-full" />
+                        <img src={icon} alt="icon" className="w-full h-full rounded-md" />
                       </div>
                       <div className="work-content_bar" />
                     </div>

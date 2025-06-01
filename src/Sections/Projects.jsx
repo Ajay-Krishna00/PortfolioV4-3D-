@@ -33,13 +33,13 @@ const Projects = () => {
             />
           </div>
           <div
-            className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
+            className="backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
             style={currentProject.logoStyle}
           >
             <img
               src={currentProject.logo}
               alt="logo"
-              className="w-10 h-10 shadow-sm"
+              className="w-[50px] h-[50px] shadow-sm rounded-md"
             />
           </div>
           <div className="flex flex-col gap-5 text-white-600 my-5">
