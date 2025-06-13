@@ -16,10 +16,10 @@ const CusLoader = ({ onFinish }) => {
         loadingContainer.classList.remove("Loading");
         const welcomeText = document.querySelector(".welcome");
         welcomeText.classList.add("Netflix");
-      }, 1800);
+      }, 2000);
       const timer = setTimeout(() => {
         onFinish();
-      }, 3500);
+      }, 4000);
       return () => {
         clearTimeout(timer);
         clearTimeout(timer1);

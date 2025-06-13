@@ -26,7 +26,7 @@ const HackerRoom = ({ onLoaded, ...props }) => {
       y: 3.1,
       z: 0,
       duration: 2,
-      ease: "power2.inOut",
+      ease: "power3.inOut",
     });
   });
 
